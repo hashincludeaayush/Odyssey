@@ -53,7 +53,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="odyssey"
+      uploadPreset="ShotoCloud_Odyssey"
       options={{
         multiple: false,
         resourceType: "image",
