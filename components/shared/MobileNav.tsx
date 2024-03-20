@@ -12,14 +12,10 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <header className="header">
+    <header className="header" >
       <Link href="/" className="flex items-center gap-2 md:py-2">
-        <Image
-          src="/assets/images/logo-text.png"
-          alt="logo"
-          width={180}
-          height={28}
-        />
+      <Image src="/assets/images/logo-text.png" alt="logo" width={60} height={60} />
+          <text className="text-4xl font-bold text-purple-700">ODYSSEY</text>
       </Link>
 
       <nav className="flex gap-2">
@@ -39,12 +35,11 @@ const MobileNav = () => {
             <SheetContent className="sheet-content sm:w-64">
               <>
                 <Image 
-                  src="/assets/images/logo-text.svg"
+                  src="/assets/images/logo-text.png"
                   alt="logo"
-                  width={152}
+                  width={60}
                   height={23}
-                />
-
+                /><text className="text-4xl font-bold text-purple-700">ODYSSEY</text>
               <ul className="header-nav_elements">
               {navLinks.map((link) => {
                 const isActive = link.route === pathname

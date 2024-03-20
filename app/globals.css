@@ -81,6 +81,7 @@
 
 .root {
   @apply flex min-h-screen w-full flex-col bg-white lg:flex-row;
+  background-color: #1B3A4F;
 }
 
 .root-container {
@@ -208,6 +209,7 @@
 
   .sheet-content button {
     @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
+    background-color: #e8e7e6;
   }
 
   .success-toast {
@@ -299,6 +301,7 @@
   /* Navbar Component */
   .header {
     @apply flex-between fixed h-16 w-full border-b-4 border-purple-100 bg-white p-5 lg:hidden;
+    background-color: #e8e7e6;
   }
 
   .header-nav_elements {
@@ -313,6 +316,7 @@
   /* Sidebar Component */
   .sidebar {
     @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50 lg:flex;
+    background-color: #e8e7e6;
   }
 
   .sidebar-logo {
