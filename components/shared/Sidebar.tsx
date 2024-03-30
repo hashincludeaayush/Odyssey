@@ -78,7 +78,6 @@ const Sidebar = () => {
                       />
                       {link.label}
                     </Link>
-                    <DrawerDemo />
                     {link.dropdownItems && (
                       <ul className="dropdown flex flex-col">
                         {link.dropdownItems.map((item, index) => (
@@ -93,7 +92,7 @@ const Sidebar = () => {
                   </li>
                 );
               })}
-
+                <DrawerDemo />
               <li className="flex-center cursor-pointer gap-2 p-4">
                 <UserButton afterSignOutUrl="/" showName />
               </li>
