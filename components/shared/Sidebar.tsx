@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-import { useState } from 'react';
+import { useState } from "react";
+import { DrawerDemo } from "./profile_drawer";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -77,6 +78,7 @@ const Sidebar = () => {
                       />
                       {link.label}
                     </Link>
+                    <DrawerDemo />
                     {link.dropdownItems && (
                       <ul className="dropdown flex flex-col">
                         {link.dropdownItems.map((item, index) => (
