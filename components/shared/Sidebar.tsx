@@ -9,6 +9,7 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import { DrawerDemo } from "./profile_drawer";
 import { DropdownMenuDemo } from "./tool_dropdown";
+import { ScrollArea } from "../ui/scroll-area";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -28,80 +29,80 @@ const Sidebar = () => {
 
         <nav className="sidebar-nav">
           <SignedIn>
-            <ul className="sidebar-nav_elements">
-              {navLinks.slice(0, 6).map((link) => {
-                const isActive = link.route === pathname;
+            <ScrollArea className="h-72 w-78 rounded-md border">
+              <ul className="sidebar-nav_elements">
+                {navLinks.slice(0, 6).map((link) => {
+                  const isActive = link.route === pathname;
 
-                return (
-                  <li
-                    key={link.route}
-                    className={`sidebar-nav_element group ${
-                      isActive
-                        ? "bg-purple-gradient text-white"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    <Link className="sidebar-link" href={link.route}>
-                      <Image
-                        src={link.icon}
-                        alt="logo"
-                        width={24}
-                        height={24}
-                        className={`${isActive && "brightness-200"}`}
-                      />
-                      {link.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li
+                      key={link.route}
+                      className={`sidebar-nav_element group ${
+                        isActive
+                          ? "bg-purple-gradient text-white"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {link.route==="New Dropdown" && <DropdownMenuDemo />}
+                      <Link className="sidebar-link" href={link.route}>
+                        <Image
+                          src={link.icon}
+                          alt="logo"
+                          width={24}
+                          height={24}
+                          className={`${isActive && "brightness-200"}`}
+                        />
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <ul className="sidebar-nav_elements">
-              {navLinks.slice(6).map((link) => {
-                const isActive = link.route === pathname;
+              <ul className="sidebar-nav_elements">
+                {navLinks.slice(6).map((link) => {
+                  const isActive = link.route === pathname;
 
-                return (
-                  <li
-                    key={link.route}
-                    className={`sidebar-nav_element group ${
-                      isActive
-                        ? "bg-purple-gradient text-white"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    <div className="dropdown-button">
-                      <Button variant="outline">Open</Button>
-                      {link.label === "New Dropdown" && <DropdownMenuDemo />}
-                    </div>
-                    <Link className="sidebar-link" href={link.route}>
-                      <Image
-                        src={link.icon}
-                        alt="logo"
-                        width={24}
-                        height={24}
-                        className={`${isActive && "brightness-200"}`}
-                      />
-                      {link.label}
-                    </Link>
-                    {link.dropdownItems && (
-                      <ul className="dropdown flex flex-col">
-                        {link.dropdownItems.map((item, index) => (
-                          <li key={index}>
-                            <Link className="dropdown-link" href={item.route}>
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              })}
-              <DrawerDemo />
-              <li className="flex-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl="/" showName />
-              </li>
-            </ul>
+                  return (
+                    <li
+                      key={link.route}
+                      className={`sidebar-nav_element group ${
+                        isActive
+                          ? "bg-purple-gradient text-white"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      
+                      <Link className="sidebar-link" href={link.route}>
+                        <Image
+                          src={link.icon}
+                          alt="logo"
+                          width={24}
+                          height={24}
+                          className={`${isActive && "brightness-200"}`}
+                        />
+                        {link.label}
+                      </Link>
+                      {link.dropdownItems && (
+                        <ul className="dropdown flex flex-col">
+                          {link.dropdownItems.map((item, index) => (
+                            <li key={index}>
+                              <Link className="dropdown-link" href={item.route}>
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                })}
+                <DrawerDemo />
+                <li className="flex-center cursor-pointer gap-2 p-4">
+                  <UserButton afterSignOutUrl="/" showName />
+                </li>
+              </ul>
+            </ScrollArea>
           </SignedIn>
 
           <SignedOut>
