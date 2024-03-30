@@ -78,7 +78,7 @@ const Sidebar = () => {
                       {link.label}
                     </Link>
                     {link.dropdownItems && (
-                      <ul className="dropdown">
+                      <ul className="dropdown flex flex-col">
                         {link.dropdownItems.map((item, index) => (
                           <li key={index}>
                             <Link className="dropdown-link" href={item.route}>

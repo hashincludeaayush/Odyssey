@@ -339,7 +339,7 @@
     @apply p-16-semibold flex size-full gap-4 p-4;
   }
   .dropdown {
-    @apply flex flex-col;
+    display: block;
   }
 
   /* TransformationForm Component */
