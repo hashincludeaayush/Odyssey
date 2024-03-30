@@ -28,6 +28,11 @@ export const navLinks = [
     icon: "/assets/icons/stars.svg",
   },
   {
+    label: "New Dropdown",
+    route: "/",
+    icon: "/assets/icons/stars.svg",
+  },
+  {
     label: "Object Remove",
     route: "/transformations/add/remove",
     icon: "/assets/icons/scan.svg",
@@ -44,7 +49,7 @@ export const navLinks = [
   },
   {
     label: "Profile",
-    route: "/profile",
+    route: "#",
     icon: "/assets/icons/profile.svg",
     dropdownItems: [
       {

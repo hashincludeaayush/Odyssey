@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { DrawerDemo } from "./profile_drawer";
+import { DropdownMenuDemo } from "./tool_dropdown";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -68,6 +69,7 @@ const Sidebar = () => {
                         : "text-gray-700"
                     }`}
                   >
+                     {link.label === 'Profile' && <DropdownMenuDemo />}
                     <Link className="sidebar-link" href={link.route}>
                       <Image
                         src={link.icon}
