@@ -19,7 +19,7 @@ export const navLinks = [
         label: "Sub Item 2",
         route: "/",
         icon: "/assets/icons/image.svg",
-      },
+      }
     ],
   },
   {

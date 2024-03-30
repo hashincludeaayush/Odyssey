@@ -338,6 +338,9 @@
   .sidebar-link {
     @apply p-16-semibold flex size-full gap-4 p-4;
   }
+  .dropdown {
+    @apply p-16-semibold flex size-full gap-4 p-4;
+  }
 
   /* TransformationForm Component */
   .prompt-field {
