@@ -3,11 +3,24 @@ export const navLinks = [
     label: "Home",
     route: "/",
     icon: "/assets/icons/home.svg",
+    
   },
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
     icon: "/assets/icons/image.svg",
+    dropdownItems: [
+      {
+        label: "Sub Item 1",
+        route: "/",
+        icon: "/assets/icons/image.svg",
+      },
+      {
+        label: "Sub Item 2",
+        route: "/",
+        icon: "/assets/icons/image.svg",
+      },
+    ],
   },
   {
     label: "Generative Fill",

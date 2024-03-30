@@ -1,20 +1,25 @@
-"use client"
+"use client";
 
-import { navLinks } from '@/constants'
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Button } from '../ui/button'
+import { navLinks } from "@/constants";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="sidebar" >
+    <aside className="sidebar">
       <div className="flex size-full flex-col gap-2">
         <Link href="/" className="sidebar-logo">
-        <Image src="/assets/images/logo-text.png" alt="logo" width={90} height={90}  />
+          <Image
+            src="/assets/images/logo-text.png"
+            alt="logo"
+            width={90}
+            height={90}
+          />
           <text className="text-4xl font-bold text-purple-700">ODYSSEY</text>
         </Link>
 
@@ -22,52 +27,72 @@ const Sidebar = () => {
           <SignedIn>
             <ul className="sidebar-nav_elements">
               {navLinks.slice(0, 6).map((link) => {
-                const isActive = link.route === pathname
+                const isActive = link.route === pathname;
 
                 return (
-                  <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
-                  }`}>
+                  <li
+                    key={link.route}
+                    className={`sidebar-nav_element group ${
+                      isActive
+                        ? "bg-purple-gradient text-white"
+                        : "text-gray-700"
+                    }`}
+                  >
                     <Link className="sidebar-link" href={link.route}>
-                      <Image 
+                      <Image
                         src={link.icon}
                         alt="logo"
                         width={24}
                         height={24}
-                        className={`${isActive && 'brightness-200'}`}
+                        className={`${isActive && "brightness-200"}`}
                       />
                       {link.label}
                     </Link>
                   </li>
-                )
+                );
               })}
-              </ul>
-
+            </ul>
 
             <ul className="sidebar-nav_elements">
               {navLinks.slice(6).map((link) => {
-                const isActive = link.route === pathname
+                const isActive = link.route === pathname;
 
                 return (
-                  <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
-                  }`}>
+                  <li
+                    key={link.route}
+                    className={`sidebar-nav_element group ${
+                      isActive
+                        ? "bg-purple-gradient text-white"
+                        : "text-gray-700"
+                    }`}
+                  >
                     <Link className="sidebar-link" href={link.route}>
-                      <Image 
+                      <Image
                         src={link.icon}
                         alt="logo"
                         width={24}
                         height={24}
-                        className={`${isActive && 'brightness-200'}`}
+                        className={`${isActive && "brightness-200"}`}
                       />
                       {link.label}
                     </Link>
+                    {link.dropdownItems && (
+                      <ul className="dropdown">
+                        {link.dropdownItems.map((item, index) => (
+                          <li key={index}>
+                            <Link className="dropdown-link" href={item.route}>
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
-                )
+                );
               })}
 
               <li className="flex-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl='/' showName />
+                <UserButton afterSignOutUrl="/" showName />
               </li>
             </ul>
           </SignedIn>
@@ -80,7 +105,7 @@ const Sidebar = () => {
         </nav>
       </div>
     </aside>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
