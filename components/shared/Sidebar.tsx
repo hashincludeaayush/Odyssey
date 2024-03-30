@@ -29,7 +29,7 @@ const Sidebar = () => {
 
         <nav className="sidebar-nav">
           <SignedIn>
-            <ScrollArea className="h-70 w-90 rounded-md border">
+            <ScrollArea className="h-72 w-80 rounded-md border">
               <ul className="sidebar-nav_elements">
                 {navLinks.slice(0, 6).map((link) => {
                   const isActive = link.route === pathname;
