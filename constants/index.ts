@@ -46,6 +46,18 @@ export const navLinks = [
     label: "Profile",
     route: "/profile",
     icon: "/assets/icons/profile.svg",
+    dropdownItems: [
+      {
+        label: "Sub Item 1",
+        route: "/",
+        icon: "/assets/icons/image.svg",
+      },
+      {
+        label: "Sub Item 2",
+        route: "/",
+        icon: "/assets/icons/image.svg",
+      }
+    ],
   },
   {
     label: "Buy Credits",

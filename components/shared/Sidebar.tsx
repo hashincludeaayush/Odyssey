@@ -6,10 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
+import { useState } from 'react';
 
 const Sidebar = () => {
   const pathname = usePathname();
-
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   return (
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-2">
