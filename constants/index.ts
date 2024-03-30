@@ -29,7 +29,7 @@ export const navLinks = [
   },
   {
     label: "New Dropdown",
-    route: "/",
+    route: "#",
     icon: "/assets/icons/stars.svg",
   },
   {
@@ -49,7 +49,7 @@ export const navLinks = [
   },
   {
     label: "Profile",
-    route: "#",
+    route: "/profile",
     icon: "/assets/icons/profile.svg",
     dropdownItems: [
       {

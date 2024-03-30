@@ -69,7 +69,10 @@ const Sidebar = () => {
                         : "text-gray-700"
                     }`}
                   >
-                     {link.label === 'Profile' && <DropdownMenuDemo />}
+                    <div className="dropdown-button">
+                      <Button variant="outline">Open</Button>
+                      {link.label === "New Dropdown" && <DropdownMenuDemo />}
+                    </div>
                     <Link className="sidebar-link" href={link.route}>
                       <Image
                         src={link.icon}
@@ -94,7 +97,7 @@ const Sidebar = () => {
                   </li>
                 );
               })}
-                <DrawerDemo />
+              <DrawerDemo />
               <li className="flex-center cursor-pointer gap-2 p-4">
                 <UserButton afterSignOutUrl="/" showName />
               </li>
